@@ -7,6 +7,6 @@ int main(){
 	if((k%3==0)&&(k%5==0)){
 		printf("1"); 
 	} 
-	printf("hahaha"); 
+//	printf("hahaha"); 
 	return 0; 
 } 
