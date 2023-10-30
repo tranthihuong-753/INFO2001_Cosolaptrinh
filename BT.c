@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 int main() {
-	printf("hahiha"); 
+	printf("chanquanhe");
+	printf("thu lan n"); 
 	return 0; 
 }
 
