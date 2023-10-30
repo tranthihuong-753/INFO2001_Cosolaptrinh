@@ -7,5 +7,4 @@ int main(){
 	    if(1<0){
      	printf("k am"); 
 	 }
-	return 0; 
 } 
