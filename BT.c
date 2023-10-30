@@ -16,8 +16,6 @@ int main() {
             printf("Chu?i k? t? ch?a k? t? ğ?c bi?t: %c\n", str[i]);
         }
     }
-
-    return 0;
 }
 
  
