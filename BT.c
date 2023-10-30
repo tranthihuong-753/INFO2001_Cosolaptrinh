@@ -2,7 +2,6 @@
 
 int main() {
 	printf("chanquanhe");
-	return 0; 
-}
+	}
 
  
