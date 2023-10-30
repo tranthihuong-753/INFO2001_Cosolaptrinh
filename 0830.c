@@ -6,7 +6,10 @@ int main(){
 	printf("%d",k); 
 //	printf("hahaha"); 
     printf("chothatchu"); 
-    printf("ha 1");
+//    printf("ha 1");
+     if(k<0){
+     	printf("k am"); 
+	 } 
 	 
 	return 0; 
 } 
