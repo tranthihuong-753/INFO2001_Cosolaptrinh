@@ -40,13 +40,13 @@ void deleteEmployee(char iddeleteAE[],struct Employee emp[], int *n){
 	(*n)--;  //*n-- bi loi  
 }  
 
-//Sap xep theo id  
+//Sap xep theo ten 
 void sortByName(struct Employee emp[], int n){
 	struct Employee a;
     int i,o;
 	for(i=0;i<n-1;i++){
 		for(o=0;o<n-i-1;o++){
-			if(strcmp(emp[o].id,emp[o+1].id)>0){
+			if(strcmp(emp[o].name,emp[o+1].name)>0){
 			    a= emp[o];
 			    emp[o]=emp[o+1];
 				emp[o+1]=a; 
@@ -61,7 +61,7 @@ int main(){
 	printf("So nhan vien can quan ly la: ");
 	scanf("%u", &n);
 	
-	//nhap thong tin cua n sinh vien  
+	//nhap va hien thi thong tin cua n sinh vien  
 	struct Employee emp[n]; 
 	int i;
 	for(i=0;i<n;i++){
@@ -78,49 +78,20 @@ int main(){
 		scanf("%f", &emp[i].salary);
 	}
 	
-	//Sap xep 
+    //Them nhan vien  
+    unsigned int numberquantityAE;
+    printf("Nhap vao so luong nhan vien muon them: ");
+	scanf("%u", &numberquantityAE) ;
+    addEmployee(numberquantityAE,emp,n);
+	
+	//xoa 1 nhan vien 
+	char iddeleteAE[10];
+    printf("Nhap vao id cua mot nhan vien muon xoa : ");
+	scanf("%u", &iddeleteAE) ; 
+    deleteEmployee(iddeleteAE,emp,&n);
+    
+    //Sap xep 
 	sortByName(emp, n);
-	for(i=0;i<n;i++){
-		printf("\nTHONG TIN NHAN VIEN %d", i+1);
-		printf("\n\tTen: %s", emp[i].name);
-		printf("\n\tID: %s\n",emp[i].id);
-		printf("\n\tChuc vu : %s", emp[i].position);
-		printf("\n\tLuong : %.2f", emp[i].salary);
-	} 
-	
-	//hien thi thong tin sau khi sap xep 
-	for(i=0;i<n;i++){
-		printf("\nTHONG TIN NHAN VIEN %d", i+1);
-		printf("\n\tTen: %s", emp[i].name);
-		printf("\n\tID: %s\n",emp[i].id);
-		printf("\n\tChuc vu : %s", emp[i].position);
-		printf("\n\tLuong : %.2f", emp[i].salary);
-	} 	
-	 
-	int a;
-	printf("MUON THEM NHAP VAO '1', XOA NHAP VAO '0'");
-	scanf("%d", &a); 
-	if(a==1){
-		//Them nhan vien  
-        unsigned int numberquantityAE;
-        printf("Nhap vao so luong nhan vien muon them: ");
-	    scanf("%u", &numberquantityAE) ;
-        addEmployee(numberquantityAE,emp,n);
-	}else{
-    	//xoa 1 nhan vien 
-     	unsigned int numberdeleteAE;
-        printf("Nhap vao so luong nhan vien muon xoa: ");
-        scanf("%u", &numberdeleteAE); 
-	
-        printf("Nhap vao id cua mot nhan vien muon xoa : ");
-        for(i=0;i<numberdeleteAE;i++){
-    	    char iddeleteAE[10];
-     	    scanf("%u", &iddeleteAE) ; 
-            deleteEmployee(iddeleteAE,emp,&n);
-	    }   
-	} 
-	 
+    
 	return 0; 
-} 
-
-
+}

@@ -54,7 +54,7 @@ int main(){
 		scanf("%f", &std[i].grade); 
 	}
 	
-	//Sap xep dan sach theo diem so  
+	//Sap xep danh sach theo diem so  
 	sortByName(std,n);
 	
 	//hien thi thong tin sinh vien sau khi sap xep 
